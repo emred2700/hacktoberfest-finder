@@ -78,10 +78,10 @@ const app = new Vue({
                     this.isFetching = false;
                 });
 		},
-		
+
 		insertEmojis(label) {
 			for (let [emoji, url] of Object.entries(this.emojis)) {
-				label = label.replace(`:${emoji}:`, `<img src="${url}" class="h-4" />`);
+				label = label.replace(`:${emoji}:`, `<img style="font-size:1em" src="${url}" class="h-4" />`);
 			}
 			return label;
 		},
@@ -165,7 +165,7 @@ const app = new Vue({
         document.addEventListener('click', this.onClickOutside);
     },
 
-    destroyed() { 
+    destroyed() {
         document.removeEventListener('click', this.onClickOutside);
     }
 });
